@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightPink"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvTitle1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_vertical"
+        android:layout_margin="@dimen/margin_medium_size"
+        android:background="@color/orange"
+        android:padding="@dimen/padding_medium_size"
+        android:text="@string/title"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/purple_500"
+        android:textStyle="bold|italic" />
+    <TextView
+        android:id="@+id/tvTitle2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_vertical"
+        android:layout_margin="@dimen/margin_medium_size"
+        android:background="@color/orange"
+        android:padding="@dimen/padding_medium_size"
+        android:text="@string/title"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/purple_500"
+        android:textStyle="bold|italic" />
+
+
+    <ImageView
+        android:id="@+id/ivImage"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin_medium_size"
+        android:background="@color/purple_500"
+        android:src="@drawable/abc_vector_test" />
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small_size"
+        android:backgroundTint="@color/yellow"
+        android:text="First Button"
+        android:textStyle="bold|italic"
+        android:textSize="@dimen/medium_size"
+        android:visibility="visible" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginTop="@dimen/margin_small_size"
+        android:background="@color/orange" />
+
+
+    <EditText
+        android:id="@+id/etUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_small_size"
+        android:textColor="@color/black"
+        android:hint="Username"
+        android:inputType="text"
+        android:textColorHint="@color/purple_700" />
+
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_small_size"
+        android:layout_marginEnd="@dimen/margin_small_size"
+        android:textColor="@color/black"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textColorHint="@color/purple_700" />
+
+
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Married?" />
+
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:background="@color/orange"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content" >
+
+        <RadioButton
+            android:id="@+id/yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yes" />
+
+        <RadioButton
+            android:id="@+id/no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No" />
+
+    </RadioGroup>
+
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:isIndicator="false"
+        android:stepSize="1" />
+
+
+    <Switch
+        android:id="@+id/notifications"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notifications"
+        android:textColor="@color/black"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:progress="10" />
+
+
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:queryHint="Search Photos" />
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.ProgressBar" />
+</LinearLayout>
