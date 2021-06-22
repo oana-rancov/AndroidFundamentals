@@ -11,4 +11,10 @@
     <color name="lightPink">#F3D4D2</color>
     <color name="yellow">#DAD180</color>
     <color name="orange">#E3957D</color>
+    <color name="lightGreen">#9de3b2</color>
+    <color name="lightBlue">#88dbdc</color>
+    <color name="green">#86da81</color>
+    <color name="red">#fc3650</color>
+    <color name="grey">#a8a8a5</color>
+
 </resources>
