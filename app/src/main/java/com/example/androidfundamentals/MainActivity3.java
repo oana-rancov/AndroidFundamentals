@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -41,6 +43,14 @@ public class MainActivity3 extends AppCompatActivity {
                 }
             }
         });
+
+
+        WebView webView = findViewById(R.id.webView);
+        //setam set java script enable
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+
+        webView.loadUrl("https://developer.android.com/");
 
     }
 }
