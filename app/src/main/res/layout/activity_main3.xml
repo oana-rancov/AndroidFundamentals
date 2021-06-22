@@ -124,6 +124,16 @@
 
         </FrameLayout>
 
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/purple_200"
+            android:layout_marginTop="@dimen/margin_small_size"
+            android:prompt="@string/title" />
+
+
     </LinearLayout>
 
 </ScrollView>
