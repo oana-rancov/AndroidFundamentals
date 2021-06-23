@@ -1,11 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/photo"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:textSize="@dimen/medium_size"
-    android:background="@color/yellow"
-    tools:text="Photo1"
-    android:textColor="@color/orange" />
+    android:orientation="vertical" >
 
+    <TextView
+        android:id="@+id/photo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/yellow"
+        tools:text="Photo1"
+        android:textColor="@color/orange"
+        android:textSize="32sp" />
+
+    <TextView
+        android:id="@+id/photoNr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/yellow"
+        android:text="1"
+        tools:text="1"
+        android:textColor="@color/orange"
+        android:textSize="@dimen/medium_size" />
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+    android:src="@drawable/abc_vector_test" />
+
+</LinearLayout>
