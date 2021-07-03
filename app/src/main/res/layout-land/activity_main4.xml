@@ -11,9 +11,14 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Photo List Portrait"
+        android:text="Photo List Landscape"
         android:gravity="center"
         android:textSize="@dimen/medium_size" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/abc_vector_test"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/photoList"
@@ -23,5 +28,7 @@
         tools:context=".MainActivity4"
         tools:listitem="@layout/item_photo"
         tools:itemCount="6" />
+
+
 </LinearLayout>
 
