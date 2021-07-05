@@ -14,6 +14,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.io.Serializable;
+
 public class MainActivity5 extends AppCompatActivity {
     private final static String TAG = MainActivity5.class.getSimpleName();
     private TextView username;
@@ -26,6 +28,9 @@ public class MainActivity5 extends AppCompatActivity {
     //ca si un map-> le atribuim dupa key-value
     private static final String LAST_NAME = "lastname";
     private static final String FIRST_NAME = "firstname";
+
+    //cheie pt explicit intent
+    static final String MESSAGE = "message";
 
     //LifeCycle
     @Override
@@ -104,6 +109,21 @@ public class MainActivity5 extends AppCompatActivity {
 //                }
             }
         });
+
+
+        //EXPLICIT INTENT
+        /* Going from one activity to another through a button and display a message*/
+        findViewById(R.id.startSecondActivity).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //OPEN SECOND ACTIVITY AND SET A MESSAGE USING EXPLICIT INTENT
+                Intent intent = new Intent(MainActivity5.this, SecondMainActivity5.class);
+                //intent.putExtra(MESSAGE, "Hello from first Activity");
+                Person5 person = new Person5("Oana", "21");
+                intent.putExtra(MESSAGE, person);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -145,4 +165,7 @@ public class MainActivity5 extends AppCompatActivity {
         outState.putString(FIRST_NAME, userFirstname);
         super.onSaveInstanceState(outState);
     }
+
+
+
 }
