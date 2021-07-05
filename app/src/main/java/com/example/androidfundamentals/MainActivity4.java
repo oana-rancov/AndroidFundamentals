@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import java.util.List;
 
 public class MainActivity4 extends AppCompatActivity {
+    //item_photo, DataSource, PhotosAdapter, activity_main4.xml
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +33,7 @@ public class MainActivity4 extends AppCompatActivity {
         photoListRecycler.setLayoutManager(linearLayoutManager);
 
         //now the last step: create the Adapter
-        //define pgoto list
+        //define photo list
         PhotosAdapter photosAdapter = new PhotosAdapter(photoList, personList);
         photoListRecycler.setAdapter(photosAdapter);
     }

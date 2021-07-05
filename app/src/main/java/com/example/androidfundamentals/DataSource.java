@@ -1,5 +1,7 @@
 package com.example.androidfundamentals;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -68,5 +70,64 @@ public class DataSource {
         personList.add(person2);
 
         return personList;
+    }
+
+
+
+    class Student{
+        private String FirstName;
+        private String LastName;
+
+        public Student(String FirstName, String LastName){
+            this.FirstName = FirstName;
+            this.LastName = LastName;
+        }
+
+        public String getFirstName() {
+            return FirstName;
+        }
+
+        public void setFirstName(String firstName) {
+            FirstName = firstName;
+        }
+
+        public String getLastName() {
+            return LastName;
+        }
+
+        public void setLastName(String lastName) {
+            LastName = lastName;
+        }
+    }
+
+    public List<Student> getStudents(){
+
+        List<Student> studentList = new ArrayList<>();
+        /*
+         Student student1 = new Student();
+         student1.setFirstName("FirstName 1");
+         student1.setLastName("LastName 1");
+
+        Student student2 = new Student();
+        student2.setFirstName("FirstName 2");
+        student2.setLastName("LastName 2");
+
+        studentList.add(student1);
+        studentList.add(student2); */
+
+        /*
+        Student[] student = new Student[10];
+        for(int i = 0; i < 10; i++) {
+            student[i] = new Student("FirstName " + i, "LastName " + i);
+            studentList.add(student[i]);
+        } */
+
+
+        for(int i = 0; i < 10; i++) {
+            int j = i+1;
+            studentList.add(new Student("FirstName " + j, "LastName " + j));
+        }
+
+        return studentList;
     }
 }
