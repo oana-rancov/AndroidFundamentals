@@ -27,4 +27,10 @@
         android:layout_height="wrap_content"
         android:textColor="@color/black"/>
 
+    <Button
+        android:id="@+id/openBrowser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Open Browser" />
+
 </LinearLayout>

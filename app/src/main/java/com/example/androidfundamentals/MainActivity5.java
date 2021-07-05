@@ -3,11 +3,14 @@ package com.example.androidfundamentals;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -77,6 +80,28 @@ public class MainActivity5 extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
 
+            }
+        });
+
+
+        findViewById(R.id.openBrowser).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //OPEN BROWSER USING IMPLICIT INTENT
+
+                Intent intent = new Intent(Intent.ACTION_VIEW); //ca sa deschidem browser-ul
+                if(intent.resolveActivity(getPackageManager()) != null) {
+                    intent.setData(Uri.parse("http://developer.android.com/guide/components/intents-common"));
+                    startActivity(intent);
+                }
+
+
+//                Intent intent = new Intent(Intent.ACTION_DIAL);
+//                Log.d(TAG, "Resolve Activity" + intent.resolveActivity(getPackageManager()));
+//                if(intent.resolveActivity(getPackageManager()) != null){ //ar fi crapat aplicatia fara asta
+//                    intent.setData(Uri.parse("023456"));
+//                    startActivity(intent);
+//                }
             }
         });
     }
