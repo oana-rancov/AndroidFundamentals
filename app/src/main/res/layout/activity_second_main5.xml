@@ -20,4 +20,11 @@
         android:text="Close Second Activity"
         android:textColor="@color/black" />
 
+    <Button
+        android:id="@+id/closeSecondActivityForResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Close Second Activity For Result"
+        android:textColor="@color/black" />
+
 </LinearLayout>

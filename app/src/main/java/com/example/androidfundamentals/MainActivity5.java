@@ -1,8 +1,10 @@
 package com.example.androidfundamentals;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -31,6 +33,9 @@ public class MainActivity5 extends AppCompatActivity {
 
     //cheie pt explicit intent
     static final String MESSAGE = "message";
+
+    //for activity for result
+    private final static int REQ_CODE_SECOND_ACTIVITY = 8;
 
     //LifeCycle
     @Override
@@ -124,6 +129,17 @@ public class MainActivity5 extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+        //ACTIVITY FOR RESULT
+        findViewById(R.id.startSecondActivityForResult).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity5.this, SecondMainActivity5.class);
+                setResult(REQ_CODE_SECOND_ACTIVITY);
+                startActivityForResult(intent, REQ_CODE_SECOND_ACTIVITY);
+            }
+        });
     }
 
     @Override
@@ -166,6 +182,25 @@ public class MainActivity5 extends AppCompatActivity {
         super.onSaveInstanceState(outState);
     }
 
+    //FOR ACTIVITY RESULT
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        Log.d(TAG, "onActivityResult()");
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == REQ_CODE_SECOND_ACTIVITY){
+            if(resultCode == Activity.RESULT_OK){
+                if(data != null){
+                    String message = data.getStringExtra(SecondMainActivity5.SECOND_MESSAGE); //primim mesaj din a doua activitate
+                    username.setText(message); //setam mesajul pe TextView username
+                }
+            }else if(resultCode == Activity.RESULT_CANCELED){
+                username.setText("Request failed"); //setam mesajul pe TextView username
+
+            }
+
+        }
 
 
+    }
 }

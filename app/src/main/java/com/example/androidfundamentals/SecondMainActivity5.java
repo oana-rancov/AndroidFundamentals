@@ -2,6 +2,8 @@ package com.example.androidfundamentals;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -10,6 +12,7 @@ import android.widget.TextView;
 
 public class SecondMainActivity5 extends AppCompatActivity {
     private final static String TAG = SecondMainActivity5.class.getSimpleName();
+    final static String SECOND_MESSAGE = "second_message"; //public ca sa il putem accesa in prima activitate
 
 
     @Override
@@ -39,6 +42,18 @@ public class SecondMainActivity5 extends AppCompatActivity {
         closeActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                finish();
+            }
+        });
+
+        //revenim la a doua activitate dupa Activity For Result
+        Button closeActivityForResult = findViewById(R.id.closeSecondActivityForResult);
+        closeActivityForResult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.putExtra(SECOND_MESSAGE, "Hello from second activity!");
+                setResult(Activity.RESULT_OK, intent); //aici setam ce result vrem
                 finish();
             }
         });
