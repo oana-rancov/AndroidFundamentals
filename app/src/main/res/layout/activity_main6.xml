@@ -8,10 +8,18 @@
     android:orientation="vertical"
     android:background="@color/lightPink">
 
+    <!--Static Fragment -->
     <fragment
         android:id="@+id/firstFragment"
-        android:layout_width="400dp"
-        android:layout_height="400dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
         android:name="com.example.androidfundamentals.week6.Fragment6"/>
+
+    <!--Dynamic Fragment -->
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginTop="@dimen/margin_medium_size" />
 
 </LinearLayout>
