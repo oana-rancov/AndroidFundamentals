@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.androidfundamentals.R;
 
@@ -44,8 +45,16 @@ public class Fragment6 extends Fragment {
     @Override
     public void onViewCreated( View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         Log.d(TAG, "onViewCreated()");
+
+        //aici luam datele de pe bundle din MA6
+        Bundle bundle = getArguments();
+        if(bundle != null){
+            String string = bundle.getString(MainActivity6.KEY);
+            //TOAST
+            Toast.makeText(getContext(), string, Toast.LENGTH_LONG).show();
+        }
+
     }
 
     @Override

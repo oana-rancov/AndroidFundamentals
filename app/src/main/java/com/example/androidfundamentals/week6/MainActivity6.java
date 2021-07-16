@@ -13,20 +13,32 @@ import com.example.androidfundamentals.R;
 
 public class MainActivity6 extends AppCompatActivity {
     private static final String TAG = MainActivity6.class.getSimpleName();
+    //public ca sa il putem accesa in Fragment6
+    static final String KEY = "Key"; //key for bundle
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main6);
+        Log.d(TAG, "onCreate()");
+
+        //vom trimite o informatie dintr-o activitate intr-un fragment
+        Bundle bundle = new Bundle();
+        bundle.putString(KEY, "Hello Fragment");
+
 
         //Dynamic Fragment -> container
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        Fragment6 staticFragment = (Fragment6) fragmentManager.findFragmentById(R.id.firstFragment);
-        Fragment6 dynamicFragment = (Fragment6) fragmentManager.findFragmentByTag(Fragment6.class.getSimpleName());
         //fragmentTransaction.replace(R.id.fragmentContainer, new Fragment6(), Fragment6.class.getSimpleName());
         Fragment6 fragment6 = new Fragment6();
+        fragment6.setArguments(bundle); //for bundle -> trimitem date
         fragmentTransaction.replace(R.id.fragmentContainer, fragment6, Fragment6.class.getSimpleName());
+
+        //search for a fragment by ID (static frgm) or by TAG (dynamic frgm)
+        Fragment6 staticFragment = (Fragment6) fragmentManager.findFragmentById(R.id.firstFragment);
+        Fragment6 dynamicFragment = (Fragment6) fragmentManager.findFragmentByTag(Fragment6.class.getSimpleName());
+        fragmentTransaction.commit();
 
 
         findViewById(R.id.hideFragment).setOnClickListener(new View.OnClickListener() {
@@ -34,8 +46,8 @@ public class MainActivity6 extends AppCompatActivity {
             public void onClick(View v) {
                 Log.d(TAG, "Is fragment visible: " + staticFragment.isHidden());
 
-                fragmentTransaction.hide(staticFragment); //face hide la fragment
-                fragmentTransaction.commit(); //se da commit la final, cand nu mai ai nimic de facut
+                //fragmentTransaction.hide(staticFragment); //face hide la fragment
+                //fragmentTransaction.commit(); //se da commit la final, cand nu mai ai nimic de facut
 
             }
         });
