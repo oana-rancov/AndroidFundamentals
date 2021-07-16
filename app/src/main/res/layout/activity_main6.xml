@@ -22,4 +22,12 @@
         android:layout_height="400dp"
         android:layout_marginTop="@dimen/margin_medium_size" />
 
+    <!--Button for hiding the fragment -->
+    <Button
+        android:id="@+id/hideFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/purple_500"
+        android:text="Hide Fragment"/>
+
 </LinearLayout>
