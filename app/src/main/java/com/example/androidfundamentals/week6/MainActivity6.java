@@ -23,6 +23,7 @@ public class MainActivity6 extends AppCompatActivity {
         Log.d(TAG, "onCreate()");
 
         //vom trimite o informatie dintr-o activitate intr-un fragment
+        //BUNDLE COMMUNICATION
         Bundle bundle = new Bundle();
         bundle.putString(KEY, "Hello Fragment");
 
@@ -65,6 +66,10 @@ public class MainActivity6 extends AppCompatActivity {
         super.onResume();
 
         Log.d(TAG, "onResume()");
+
+        //METHOD COMMUNICATION
+        Fragment6 fragment6 = (Fragment6) getSupportFragmentManager().findFragmentById(R.id.firstFragment);
+        fragment6.setText("Hello user");
     }
 
     @Override

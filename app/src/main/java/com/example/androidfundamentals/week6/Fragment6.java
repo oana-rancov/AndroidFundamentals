@@ -17,6 +17,7 @@ import com.example.androidfundamentals.R;
 
 public class Fragment6 extends Fragment {
     private static final String TAG = Fragment6.class.getSimpleName();
+    private String text;
 
     //Fragment lifecycle
     @Override
@@ -76,6 +77,8 @@ public class Fragment6 extends Fragment {
         super.onResume();
 
         Log.d(TAG, "onResume()");
+
+        Log.d(TAG, "onResume(), " + text); //method communication
     }
 
     @Override
@@ -104,5 +107,10 @@ public class Fragment6 extends Fragment {
         super.onDetach();
 
         Log.d(TAG, "onDetach()");
+    }
+
+    //METHOD COMMUNICATION
+    public void setText(String text){
+        this.text = text;
     }
 }
