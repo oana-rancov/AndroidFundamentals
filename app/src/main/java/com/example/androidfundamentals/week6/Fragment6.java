@@ -56,6 +56,10 @@ public class Fragment6 extends Fragment {
             Toast.makeText(getContext(), string, Toast.LENGTH_LONG).show();
         }
 
+        //trimitem un text din fragment in activitate
+        SetTextListener setTextListener = (SetTextListener) getActivity();
+        setTextListener.setText("Hello Activity"); //se apeleaza metoda din activitate
+
     }
 
     @Override

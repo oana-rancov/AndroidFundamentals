@@ -11,7 +11,7 @@ import android.view.View;
 
 import com.example.androidfundamentals.R;
 
-public class MainActivity6 extends AppCompatActivity {
+public class MainActivity6 extends AppCompatActivity implements SetTextListener{
     private static final String TAG = MainActivity6.class.getSimpleName();
     //public ca sa il putem accesa in Fragment6
     static final String KEY = "Key"; //key for bundle
@@ -84,5 +84,12 @@ public class MainActivity6 extends AppCompatActivity {
         super.onDestroy();
 
         Log.d(TAG, "onDestroy()");
+    }
+
+    //metoda din interfata SetTextListener
+    //trimitem un text din fragment in activitate
+    @Override
+    public void setText(String text) {
+        Log.d(TAG, "setText(" + text + ")");
     }
 }
