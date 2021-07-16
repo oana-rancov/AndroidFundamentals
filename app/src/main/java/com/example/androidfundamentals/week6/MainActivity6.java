@@ -22,18 +22,20 @@ public class MainActivity6 extends AppCompatActivity {
         //Dynamic Fragment -> container
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.fragmentContainer, new Fragment6(), Fragment6.class.getSimpleName());
-        fragmentTransaction.commit();
+        Fragment6 staticFragment = (Fragment6) fragmentManager.findFragmentById(R.id.firstFragment);
+        Fragment6 dynamicFragment = (Fragment6) fragmentManager.findFragmentByTag(Fragment6.class.getSimpleName());
+        //fragmentTransaction.replace(R.id.fragmentContainer, new Fragment6(), Fragment6.class.getSimpleName());
+        Fragment6 fragment6 = new Fragment6();
+        fragmentTransaction.replace(R.id.fragmentContainer, fragment6, Fragment6.class.getSimpleName());
 
 
         findViewById(R.id.hideFragment).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //se poate folosi si findFragmentById -> atunci cand fragmentul este static
-                //Fragment6 fragment6 = (Fragment6)fragmentManager.findFragmentById(R.id.firstFragment);
-                Fragment6 fragment6 = (Fragment6)fragmentManager.findFragmentByTag(Fragment6.class.getSimpleName());
-                Log.d(TAG, "Is fragment visible: " + fragment6.isHidden());
-                fragmentTransaction.hide(fragment6); //face hide la fragment
+                Log.d(TAG, "Is fragment visible: " + staticFragment.isHidden());
+
+                fragmentTransaction.hide(staticFragment); //face hide la fragment
+                fragmentTransaction.commit(); //se da commit la final, cand nu mai ai nimic de facut
 
             }
         });
