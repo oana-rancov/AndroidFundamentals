@@ -92,4 +92,11 @@ public class MainActivity6 extends AppCompatActivity implements SetTextListener{
     public void setText(String text) {
         Log.d(TAG, "setText(" + text + ")");
     }
+
+    //BACK BUTTON
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Log.d(TAG, "onBackPressed()");
+    }
 }
