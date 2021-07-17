@@ -50,4 +50,16 @@
         android:background="@drawable/round_shape"
         android:text="Test Button" />
 
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:rippleColor="@color/orange"
+        android:layout_margin="@dimen/margin_medium_size"
+        android:src="@drawable/abc_vector_test"
+        app:fabSize="normal"
+        android:backgroundTint="@color/lightPink"
+        android:tint="@color/yellow"/>
+
 </LinearLayout>

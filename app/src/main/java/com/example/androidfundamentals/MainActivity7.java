@@ -1,11 +1,17 @@
 package com.example.androidfundamentals;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity7 extends AppCompatActivity {
+    private static final String TAG = MainActivity7.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,6 +20,16 @@ public class MainActivity7 extends AppCompatActivity {
 
         //BACK BUTTON ACTION BAR
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        //set color to little icon
+        FloatingActionButton myFab = (FloatingActionButton) findViewById(R.id.fab);
+        myFab.setColorFilter(ContextCompat.getColor(this, R.color.orange));
+        myFab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG,"FAB click");
+            }
+        });
 
     }
 
