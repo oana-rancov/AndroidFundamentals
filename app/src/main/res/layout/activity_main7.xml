@@ -45,9 +45,10 @@
     </androidx.cardview.widget.CardView>
 
     <Button
+        android:id="@+id/animButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/round_shape"
+        android:background="@drawable/animation"
         android:text="Test Button" />
 
 
@@ -61,5 +62,13 @@
         app:fabSize="normal"
         android:backgroundTint="@color/lightPink"
         android:tint="@color/yellow"/>
+
+    <TextView
+        android:id="@+id/textViewAnim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/animation"
+        android:text="Text Animation"
+        android:gravity="center"/>
 
 </LinearLayout>
