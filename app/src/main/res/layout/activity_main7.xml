@@ -9,8 +9,8 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:layout_margin="@dimen/margin_medium_size"
+        android:layout_height="200dp"
+        android:layout_margin="20dp"
         app:cardCornerRadius="30dp"
         app:cardBackgroundColor="@color/lightPink"
         app:cardElevation="30dp">
@@ -70,5 +70,20 @@
         android:background="@drawable/animation"
         android:text="Text Animation"
         android:gravity="center"/>
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:textColorHint="@color/black"
+            android:layout_marginTop="10dp"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
 
 </LinearLayout>
