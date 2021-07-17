@@ -20,7 +20,8 @@
         <activity android:name=".MainActivity3" />
         <activity android:name=".MainActivityViews" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".MainActivity7">
+        <activity android:name=".MainActivity7"
+            android:theme="@style/MyAppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
