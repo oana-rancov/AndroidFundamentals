@@ -4,7 +4,6 @@
     <style name="MyAppStyle">
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">@dimen/medium_size</item>
-        <item name="background">@color/orange</item>
         <item name="android:textStyle">bold</item>
     </style>
 

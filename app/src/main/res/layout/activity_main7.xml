@@ -25,7 +25,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/title"
-                android:layout_margin="@dimen/margin_small_size"/>
+                android:gravity="center"
+                android:background="@drawable/round_shape"
+                android:layout_margin="@dimen/margin_small_size"
+                android:typeface="serif"
+                android:fontFamily="sans-serif-black"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
 
             <Button
                 android:id="@+id/btn"
@@ -33,9 +38,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_small_size"
                 android:text="Show snackBar"
-                style="@style/MyAppStyle"/>
+                style="@style/MyAppStyle"
+                android:background="@drawable/shape"/>
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_shape"
+        android:text="Test Button" />
 
 </LinearLayout>
