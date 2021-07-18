@@ -1,8 +1,12 @@
 package com.example.androidfundamentals;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,6 +20,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity7 extends AppCompatActivity {
     private static final String TAG = MainActivity7.class.getSimpleName();
+    private static final int REQ_CAMERA_CODE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,8 +63,35 @@ public class MainActivity7 extends AppCompatActivity {
                 snackbar.show();
             }
         });
+
+        //PERMISSION FOR CAMERA
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //daca s-a cerut permisiunea de camera
+                if(ContextCompat.checkSelfPermission(MainActivity7.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
+                    //daca permisiunea nu a fost granted, se face request la acea permisiune
+                    ActivityCompat.requestPermissions(MainActivity7.this, new String[]{Manifest.permission.CAMERA}, REQ_CAMERA_CODE);
+                }
+            }
+        });
+
     }
 
+    //override for permission
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull  String[] permissions, @NonNull int[] grantResults) {
+        Log.d(TAG, "onRequestPermissionsResult() requestCode= " + requestCode);
+        if(requestCode == REQ_CAMERA_CODE){
+            if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                Log.d(TAG, "onRequestPermissionsResult() permission granted");
+            }
+            else{
+                Log.d(TAG, "onRequestPermissionsResult() permission NOT granted");
+            }
+        }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
 
     //Asta pentru navigation drawer alea cu 3 puncte-> cand ne cream un menu in action bar
     /*
