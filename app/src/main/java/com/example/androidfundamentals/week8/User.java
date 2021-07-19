@@ -10,6 +10,18 @@ public class User {
     private String surname;
     @SerializedName("address")
     private String homeAddress;
+    //for the child from json
+    @SerializedName("child")
+    private Child child;
+
+    public Child getChild() {
+        return child;
+    }
+
+    public void setChild(Child child) {
+        this.child = child;
+    }
+
 
     public String getName() { return name; }
 
@@ -25,10 +37,12 @@ public class User {
 
     @Override
     public String toString(){
-        return "Person{" +
+        return "User{" +
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", homeAddress='" + homeAddress + '\'' +
+                ", childName='" + child.getName() + '\'' +
+                ", childLastName='" + child.getSurname() + '\'' +
                 '}';
     }
 

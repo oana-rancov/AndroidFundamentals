@@ -40,7 +40,9 @@ public class RetrofitMainActivity extends AppCompatActivity {
                     List<User> users = response.body();
 
                     for(User user : users) {
-                        Log.d("Response", "Username= " + user.getName());
+                        //asta doar pentru FIRST_FILE
+                        String childName = user.getChild().getName();
+                        Log.d("Response", "Username= " + user.getName() + " childName= " + childName);
                     }
 
                 }else{
