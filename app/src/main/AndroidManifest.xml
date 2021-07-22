@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidFundamentals">
-        <activity android:name=".week8.RetrofitMainActivity"></activity>
+        <activity android:name=".week9.SharedPrefActivity"></activity>
+        <activity android:name=".week8.RetrofitMainActivity" />
         <activity android:name=".MainActivity7" />
         <activity android:name=".week6.MainActivity6" />
         <activity android:name=".MainActivity5" />
@@ -25,7 +26,7 @@
         <activity android:name=".MainActivityViews" />
         <activity android:name=".MainActivity" />
         <activity
-            android:name=".week9.SharedPrefActivity"
+            android:name=".week9.RoomActivity"
             android:theme="@style/MyAppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
