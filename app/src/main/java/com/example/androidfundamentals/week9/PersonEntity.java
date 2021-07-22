@@ -19,9 +19,14 @@ public class PersonEntity {
     @ColumnInfo(name = "homeAddress")
     public String homeAddress;
 
+    //for migration
+    @ColumnInfo(name = "nickName")
+    public String nickName;
+
     public PersonEntity(String name,
                         String surname,
-                        String homeAddress){
+                        String homeAddress,
+                        String nickName){
         this.name = name;
         this.surname = surname;
         this.homeAddress = homeAddress;

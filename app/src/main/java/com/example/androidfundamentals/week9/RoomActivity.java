@@ -53,7 +53,8 @@ public class RoomActivity extends AppCompatActivity {
                                 personEntities.add(new PersonEntity(
                                         person.getName(),
                                         person.getSurname(),
-                                        person.getHomeAddress()
+                                        person.getHomeAddress(),
+                                        "nickName" //for migration
                                 ));
                             }
 
@@ -63,7 +64,7 @@ public class RoomActivity extends AppCompatActivity {
 
                             //insert persons de lsta mea de persoane
                             Database.getDatabase(RoomActivity.this).personDao().insertPersons(personEntities);
-                            Database.getDatabase(RoomActivity.this).personDao().insertPerson(new PersonEntity("Oana", "Rancov", "Timisoara"));
+                            //Database.getDatabase(RoomActivity.this).personDao().insertPerson(new PersonEntity("Oana", "Rancov", "Timisoara"));
                         }
                     }.start();
 
@@ -96,6 +97,7 @@ public class RoomActivity extends AppCompatActivity {
 
                         //Cand apasam pe buton, ne vin persoanele pe care le-am adaugat
                         Log.d("Persons", "The persons are " + personEntities.toString());
+                        //for migration
                         String currentDBPath = getDatabasePath("my_database.db").getAbsolutePath();
 
                         Log.d(TAG, currentDBPath);
